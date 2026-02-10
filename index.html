@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./crapsgame.css">
+		<link rel="stylesheet" href="./utils.css"></linkK>
+    </head>
+    <body>
+        <div class="main-section" id="craps-game">
+			<div class="craps-game-title">Craps Casino Game</div>
+			<div class="craps-game-container">
+				<div id="craps-registration-pane">
+					<div>
+						Enter username to begin
+					</div>
+					<div>
+						<input class="craps-registration-input" id="craps-username-input">
+					</div>
+					<div class="craps-registration-continue" onclick="registerCrapsPlayer()">
+						Continue
+					</div>
+				</div>
+				<div id="craps-main-section">
+					<div class="craps-main-section-stats">	
+						<div>
+							Welcome, <span id="craps-stats-username"></span>
+						</div>
+						<div id="craps-stats-money-container">
+							$<span id="craps-stats-money"></span>
+						</div>
+						<div>
+							Rounds: <span id="craps-stats-rounds"></span>
+						</div>
+					</div>
+					<div class="craps-on-table-container">
+						<div id="roll-dice-button" class="craps-roll-dice-container no-select" onclick="rollDice()">ROLL DICE <i class="fa-solid fa-dice"></i></div>
+						<div id="craps-roll-dice-animation-container"></div>
+					</div>
+					<div class="craps-round-manager no-select">
+						<div id="craps-betting-grid-container">
+							<div class="craps-betting-grid no-select">
+								<div class="craps-bet-button" id="EVEN" onclick="betEven ()">
+									EVEN
+								</div>
+								<div class="craps-bet-amount-container">
+									<span class="craps-user-bet-amount-change" onclick="decreaseBet ()">-</span>
+									<span id="craps-user-bet-amount">$100</span>
+									<span class="craps-user-bet-amount-change" onclick="increaseBet ()">+</span>
+								</div>
+								<div class="craps-bet-button" id="ODD" onclick="betOdd ()">
+									ODD
+								</div>
+							</div>
+						</div>
+						<div id="craps-round-finish-grid-container">
+							<div class="craps-round-finish-grid no-select">
+								<div class="craps-round-finish-button" id="craps-next-round-botton" onclick="setUpNextRound()">
+									NEXT ROUND
+								</div>
+								<div id="craps-round-finish-message">
+									YOU WIN
+								</div>
+								<div class="craps-round-finish-button" onclick="exitGame()">
+									EXIT GAME
+								</div>
+							</div>
+					    </div>
+				    </div>
+			    </div>
+
+    <script src="./crapsgame.js"></script>
+	<script src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js" type="text/javascript"></script>
+    </body>
+</html>
+
+<style>
+* {
+box-sizing: border-box;
+font-family: "Happy Monkey",
+}
+html, body {
+margin: 0px;
+padding: 0px;
+}
+.main-section {
+	width: 100vw;
+	height: 100vh;
+	Background-size: cover;
+	padding: 25px;
+}
+
+.misc-section {
+	width: 100vw;
+	padding: 120px 25px;
+}
+.text-block-container{
+	width: 65%;
+	margin:0 auto;
+}
+@media screen and (max-width: 500px) {
+	.text-block-container {
+		width: 100%;
+	}
+}
+</style>
